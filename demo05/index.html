@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>draw two line</title>
+</head>
+<body>
+    <div id="canvas-warp">
+        <canvas id="canvas" style="border:1px solid #aaa;display:block;margin: 50px auto;">
+            你的浏览器居然不支持Canvas？！赶紧换一个吧！！
+        </canvas>
+    </div>  
+    <script>
+        window.onload = function(){
+            const canvas = document.getElementById("canvas");
+            canvas.width= 800;
+            canvas.height= 600;
+            const context = canvas.getContext('2d');
+           
+        }
+    </script>
+</body><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>draw two line</title>
+</head>
+<body>
+    <div id="canvas-warp">
+        <canvas id="canvas" style="border:1px solid #aaa;display:block;margin: 50px auto;">
+            你的浏览器居然不支持Canvas？！赶紧换一个吧！！
+        </canvas>
+    </div>  
+    <script>
+        window.onload = function(){
+            const canvas = document.getElementById("canvas");
+            canvas.width= 800;
+            canvas.height= 600;
+            const context = canvas.getContext('2d');
+            context.rect(200,100,400,400);
+
+            //添加渐变线
+            var grd = context.createLinearGradient(400,100,400,500);
+
+            //添加颜色断点
+            grd.addColorStop(0,"#ffddff");
+            grd.addColorStop(0.5,"#ff0000");
+            grd.addColorStop(1,"#ffd0ff");
+
+            //应用渐变
+            context.fillStyle = grd;
+
+            context.fill();
+        }
+    </script>
+</body>
+</html>
+</html>

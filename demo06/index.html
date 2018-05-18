@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>draw two line</title>
+</head>
+<body>
+    <div id="canvas-warp">
+        <canvas id="canvas" style="border:1px solid #aaa;display:block;margin: 50px auto;">
+            你的浏览器居然不支持Canvas？！赶紧换一个吧！！
+        </canvas>
+    </div>  
+    <script>
+        window.onload = function(){
+            const canvas = document.getElementById("canvas");
+            canvas.width= 800;
+            canvas.height= 600;
+            const context = canvas.getContext('2d');
+            var img = new Image(10,20);
+            img.src = './dog.png';
+            img.width = "5";
+            img.onload = function(){
+                var pattern = context.createPattern(img, "repeat");
+                context.fillStyle = pattern;
+                context.fillRect(0,0,800,600);
+            }    
+        }
+    </script>
+</body>
+</html>
